@@ -15,8 +15,6 @@
 ----
 
 ## 📂 Project Structure
-
-LipBuddy/
 │
 ├── app.py                # Flask or Streamlit main app
 ├── model/                # LipNet model and related code
