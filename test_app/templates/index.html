@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LipBuddy</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #34495e;
+            margin-top: 30px;
+        }
+
+        /* Form Styles */
+        form {
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 1.1rem;
+            color: #34495e;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        select, input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+        }
+
+        select:focus, input[type="file"]:focus {
+            border-color: #3498db;
+            outline: none;
+            background-color: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            form {
+                padding: 20px;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Lip Reader using CNN and LSTM</h1>
+    <h2>👋 Welcome to LipBuddy!</h2>
+    <H3>Group Members</H3>
+    <h5>
+        → Amit Talmale<br>
+        → Ashmit Sharma
+    </h5>
+    
+    <h2>🎞️ Select a Video to Process</h2>
+    <form action="/video" method="POST">
+        <!-- <label for="directory">Choose Directory:</label>
+        <select name="directory" required>
+            {% for directory in directories %}
+                <option value="{{ directory }}">{{ directory }}</option>
+            {% endfor %}
+        </select> -->
+        
+        <label for="selected_video">Choose Video:</label>
+        <select name="selected_video" required>
+            {% for video in options %}
+                <option value="{{ video }}">{{ video }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">▶️ Process Video</button>
+    </form>
+
+    <!-- <h2>📤 Or Upload a New Video</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="video_file" accept=".mp4,.mpg" required>
+        <button type="submit">Upload</button>
+    </form> -->
+
+</body>
+</html>
