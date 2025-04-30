@@ -5,3 +5,11 @@ example.ipynb
 __pycache__/
 *.pyc
 .DS_Store
+venv/
+Test_Sample_Video/
+example.ipynb
+models/checkpoint.weights.h5
+*.h5
+__pycache__/
+*.pyc
+.DS_Store
