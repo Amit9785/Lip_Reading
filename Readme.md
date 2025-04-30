@@ -16,7 +16,15 @@
 
 ## 📂 Project Structure
 
-LipBuddy/ │ ├── app.py # Flask or Streamlit main app ├── model/ # LipNet model and related code ├── utils/ # Video processing and decoding utilities ├── data/s1/ # Folder containing input video files ├── static/ or templates/ # Web interface assets (Flask only) ├── requirements.txt # Python dependencies └── README.md # You're reading it!
+LipBuddy/
+│
+├── app.py                # Flask or Streamlit main app
+├── model/                # LipNet model and related code
+├── utils/                # Video processing and decoding utilities
+├── data/s1/              # Folder containing input video files
+├── static/ or templates/ # Web interface assets (Flask only)
+├── requirements.txt      # Python dependencies
+└── README.md             # You're reading it!
 
 
 ---

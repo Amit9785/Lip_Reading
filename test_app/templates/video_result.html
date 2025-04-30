@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LipBuddy - Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            padding: 20px;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .video-container {
+            flex: 1 1 600px;
+            margin-bottom: 20px;
+        }
+
+        .output-box {
+            background: white;
+            padding: 20px;
+            border-left: 6px solid #3498db;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex: 1 1 45%;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+
+        .softmax-box {
+            background: white;
+            padding: 20px;
+            border-left: 6px solid #2ecc71;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 8px;
+            flex: 1 1 100%;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 14px;
+            color: #34495e;
+        }
+
+        .back-button {
+            display: block;
+            background-color: #c2fbd7;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(44, 187, 99, 0.2);
+            color: green;
+            text-align: center;
+            padding: 15px 25px;
+            font-size: 18px;
+            text-decoration: none;
+            width: 200px;
+            margin: 30px auto;
+            cursor: pointer;
+            transition: all 250ms ease;
+        }
+
+        .back-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(44, 187, 99, 0.3);
+        }
+
+        .back-button:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 8px rgba(44, 187, 99, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>✅ Video Processed: {{ selected_video }}</h1>
+
+    <div class="container">
+        <!-- Video Section -->
+        <div class="video-container">
+            <video controls width="100%">
+                <source src="{{ url_for('static', filename='test_video.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Token IDs and Decoded Text Section -->
+        <div class="output-box">
+            <h2>🧪 Softmax Output (First 10 Steps)</h2>
+            <pre>{{ softmax_summary }}</pre>
+        </div>
+
+        <div class="output-box">
+            <h2>🧠 Decoded Text</h2>
+            <p>{{ decoded_text }}</p>
+        </div>
+    </div>
+
+    <!-- Softmax Output Section -->
+    <div class="softmax-box">
+        <h2>📜 Model Output (Token IDs)</h2>
+        <pre>{{ model_output }}</pre>
+    </div>
+
+    <!-- Back Button -->
+    <a href="{{ url_for('index') }}" class="back-button">🔙 Back to Home</a>
+</body>
+</html>
