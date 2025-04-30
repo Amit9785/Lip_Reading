@@ -8,11 +8,11 @@
 
 - 🎥 Upload or select a video for lip reading.
 - 🧠 Processes the video using the **LipNet** model.
-- 📜 Displays both decoded text (speech) and raw model outputs (tokens/logits).
+- 📜 Displays both decoded text (speech) and raw model outputs (tokens/logits).s
 - 🌐 Web interface available in **Flask** and **Streamlit** versions.
 - 📁 Uses a simplified video input directory: `data/s1`.
 
----
+----
 
 ## 📂 Project Structure
 
