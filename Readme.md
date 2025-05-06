@@ -50,7 +50,7 @@ LipBuddy uses the LipNet model, which includes:
 
     Spatiotemporal Convolutional Neural Networks (ST-CNNs)
 
-    Bidirectional GRU layers
+    Bidirectional LSTM layers
 
     Connectionist Temporal Classification (CTC) decoding
 
